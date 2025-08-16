@@ -1,8 +1,9 @@
 
- import {cart as mycart} from '../data/cart.js'; //module
-
+import {cart} from '../data/cart.js'; //module
+import {products} from '../data/products.js';
 
  let productHtml='';
+
 
 
 
