@@ -1,13 +1,15 @@
 
- 
-let productHtml='';
+ import {cart as mycart} from '../data/cart.js'; //module
+
+
+ let productHtml='';
 
 
 
 products.forEach((product) => {
    
 productHtml+=`
-<div class="product-container">
+<div class="product-container">/
           <div class="product-image-container">
             <img class="product-image"
               src="${product.image}">
@@ -59,7 +61,7 @@ productHtml+=`
 
 `; 
 });
-const cart=[];
+
 
 document.querySelector('.js-product-grid').innerHTML=productHtml
 document.querySelectorAll('.js-cart').
