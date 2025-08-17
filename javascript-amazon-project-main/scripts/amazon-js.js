@@ -1,5 +1,5 @@
 
-import {cart} from '../data/cart.js'; //module
+import {cart,addtocart} from '../data/cart.js'; //module
 import {products} from '../data/products.js';
 
  let productHtml='';
@@ -65,25 +65,6 @@ productHtml+=`
 
 
 document.querySelector('.js-product-grid').innerHTML=productHtml;
-
-
-function addtocart(productId){
-  let matchingitem;
-  cart.forEach((cartitem)=>{
-    if(productId===cartitem.productId){
-      matchingitem=cartitem;
-    }
-  });
-  if(matchingitem){
-    matchingitem.quantity+=1;
-  }else{
-    cart.push({
-      productId:productId,
-      quantity:1
-    });
-  }
-}
-
 function updatecartquantity() {
   let cartquantity=0;
   cart.forEach((cartitem)=>{
