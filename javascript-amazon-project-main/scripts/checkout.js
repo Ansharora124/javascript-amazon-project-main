@@ -24,7 +24,7 @@ console.log(matchingitem);
 
 
   finalHtml += `
-    <div class="cart-item-container">
+    <div class="cart-item-container js-cart-item-container-${matchingitem.id}">
             <div class="delivery-date">
               Delivery date: Tuesday, June 21
             </div>
@@ -47,8 +47,9 @@ console.log(matchingitem);
                   <span class="update-quantity-link link-primary">
                     Update
                   </span>
-                  <span class="delete-quantity-link link-primary js-delete-link">
-                    Delete
+                  <span class="delete-quantity-link link-primary js-delete-link" data-product-id="${matchingitem.id}">
+                    
+                  Delete
                   </span>
                 </div>
               </div>
@@ -111,7 +112,12 @@ forEach((link)=>{
     link.addEventListener('click',()=>{
        const productId=link.dataset.productId;
        removeFromCart(productId);
-   console.log(cart); 
-    });
+   const container=document.querySelector(`.js-cart-item-container-${productId}`); 
+   console.log(container);   
+   if (container) {
+     container.remove();
+   }
+
+});
 });
 
