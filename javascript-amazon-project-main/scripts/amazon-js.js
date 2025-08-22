@@ -69,8 +69,8 @@ productHtml+=`
 document.querySelector('.js-product-grid').innerHTML=productHtml;
 function updatecartquantity() {
   let cartquantity=0;
-  cart.forEach((cartitem)=>{
-    cartquantity+=cartitem.quantity;
+  cart.forEach((cartItem)=>{
+    cartquantity+=cartItem.quantity;
   });
   document.querySelector('.cart-quantity').innerHTML=cartquantity;
 }
