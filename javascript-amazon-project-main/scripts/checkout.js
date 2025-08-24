@@ -4,6 +4,7 @@ import { formatCurrency } from "./utils/money.js";
 import dayjs from "https://unpkg.com/supersimpledev@8.5.0/dayjs/esm/index.js";
 import { deliveryOptions } from "../data/deliveryOptions.js";
 
+function renderOrderSummary(){
 let finalHtml = "";
 
 cart.forEach((cartItem) => {
@@ -145,5 +146,8 @@ document.querySelectorAll(".delivery-option-input").forEach((input) => {
       const dateElem = container.querySelector(".delivery-date");
       if (dateElem) dateElem.textContent = `Delivery date: ${date}`;
     }
+    renderOrderSummary();
   });
 });
+}
+renderOrderSummary();
