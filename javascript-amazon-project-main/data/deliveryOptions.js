@@ -12,3 +12,9 @@ priceCents:0
     deliveryDays:1,
     priceCents:999
 }];
+export function getDeliveryOption(deliveryOptionId){
+    return (
+        deliveryOptions.find((o) => o.id === deliveryOptionId) ||
+        deliveryOptions[0]
+    );
+}
